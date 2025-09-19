@@ -1,0 +1,15 @@
+name: S3 Buckets List
+
+on:
+  workflow_dispatch:           # manual trigger
+  push:                        # run on push to main branch
+    branches:
+      - main
+
+jobs:
+  jobid1:
+    runs-on: self-hosted       # your self-hosted runner label
+
+    steps:
+      - name: S3 bucket list
+        run: aws s3 ls
