@@ -11,5 +11,10 @@ jobs:
     runs-on: self-hosted       # your self-hosted runner label
 
     steps:
-      - name: S3 bucket list
-        run: aws s3 ls
+
+      - name: AWS - Actions-user-Security-Credentials
+        run: |     
+          export AWS_ACCESS_KEY=${{ secrets.ACTIONS_USER_ACCESS_KEY }}
+          export AWS_SECRET_ACCESS_KEY=${{ secrets.ACTIONS_USER_SECRET_ACCESS_KEY }}
+          export AWS_DEFAULT_REGION=${{ vars.REGION }}
+          aws s3 ls
