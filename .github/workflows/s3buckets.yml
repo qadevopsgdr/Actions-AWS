@@ -8,7 +8,7 @@ on:
 
 jobs:
   jobid1:
-    runs-on: self-hosted       # your self-hosted runner label
+    runs-on: ubuntu-latest       # your self-hosted runner label
 
     steps:
       - name: Install AWS CLI v2
